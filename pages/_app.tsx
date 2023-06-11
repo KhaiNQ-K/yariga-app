@@ -5,8 +5,14 @@ import "@/styles/globals.css";
 import { SWRConfig } from "swr";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
+import { Manrope } from "next/font/google";
+const manrope = Manrope({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const Layout = Component.Layout ?? EmptyLayout;
+
   return (
     <SWRConfig
       value={{
@@ -17,7 +23,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <Layout>
         <ThemeProvider theme={{}}>
           <CssBaseline />
-          <Component {...pageProps} />
+          <main className={manrope.className}>
+            <Component {...pageProps} />
+          </main>
         </ThemeProvider>
       </Layout>
     </SWRConfig>
