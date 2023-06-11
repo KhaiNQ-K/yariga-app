@@ -12,12 +12,10 @@ export let theme = createTheme({
       main: "#DADEFA",
     },
     divider: "#E4E4E4",
+
     text: {
       primary: "#11142D",
       secondary: "#808191",
-    },
-    background: {
-      default: "#F4F4F4",
     },
     common: {
       white: "#FCFCFC",
@@ -26,11 +24,37 @@ export let theme = createTheme({
     action: {
       hover: "#F7F7F7",
     },
+    grey: {
+      "100": "#F4F4F4",
+    },
+    background: {
+      default: "#F4F4F4",
+    },
   },
   components: {
     MuiLink: {
       defaultProps: {
         underline: "none",
+      },
+      styleOverrides: {
+        root: {
+          color: "#11142D",
+        },
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        color: "#11142D",
+        fontFamily: "Manrope, sans-serif",
+      },
+      styleOverrides: {
+        root: {
+          color: "#11142D",
+          fontFamily: "Manrope, sans-serif",
+        },
+        h1: {
+          fontFamily: "Manrope, sans-serif",
+        },
       },
     },
   },
